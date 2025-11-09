@@ -1,0 +1,44 @@
+# Netlify Configuration for Flutter Web App
+
+[build]
+  # Since Netlify doesn't have Flutter SDK by default,
+  # we'll use GitHub Actions to build and deploy
+  # This file is mainly for routing configuration
+  publish = "build/web"
+  command = "echo 'Build handled by GitHub Actions'"
+
+[build.environment]
+  # Flutter version (for reference, actual build happens in GitHub Actions)
+  FLUTTER_VERSION = "stable"
+
+# SPA (Single Page Application) routing
+# Redirect all routes to index.html for Flutter web routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers for security and performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.wasm"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+

@@ -194,6 +194,68 @@ This project is available under the MIT License.
 - [Supabase Flutter Documentation](https://supabase.com/docs/reference/dart/introduction)
 - [Flutter Documentation](https://flutter.dev/docs)
 
+## Deploying to Netlify
+
+This repository contains a GitHub Actions workflow that builds the Flutter web app and deploys the generated static files to Netlify.
+
+### Automated Deployment via GitHub Actions
+
+What the workflow does:
+- Installs Flutter (stable channel)
+- Runs `flutter pub get` and `flutter build web --release`
+- Deploys the `build/web` folder to Netlify using the Netlify GitHub Action
+
+**Setup Steps:**
+
+1. **Create a Netlify Site:**
+   - Go to [Netlify](https://app.netlify.com) and sign in
+   - Click "Add new site" → "Import an existing project"
+   - Connect your GitHub repository
+   - Note: You can create an empty site first, we'll configure it via GitHub Actions
+
+2. **Get Netlify Credentials:**
+   - Go to [Netlify User Settings → Applications → New access token](https://app.netlify.com/user/applications)
+   - Create a new access token and copy it
+   - Go to your site settings → General → Site details
+   - Copy your **Site ID**
+
+3. **Add GitHub Secrets:**
+   - Go to your GitHub repository → Settings → Secrets and variables → Actions
+   - Add the following secrets:
+     - `NETLIFY_AUTH_TOKEN` — your Netlify access token
+     - `NETLIFY_SITE_ID` — your Netlify site ID
+
+4. **Deploy:**
+   - Push to the `main` branch or manually trigger the workflow
+   - The workflow will automatically build and deploy to Netlify
+
+### Manual Deployment
+
+If you prefer to deploy manually:
+
+1. **Build locally:**
+   ```bash
+   flutter build web --release
+   ```
+
+2. **Deploy using Netlify CLI:**
+   ```bash
+   npm install -g netlify-cli
+   netlify login
+   netlify deploy --prod --dir=build/web
+   ```
+
+3. **Or drag and drop:**
+   - Go to [Netlify Drop](https://app.netlify.com/drop)
+   - Drag and drop your `build/web` folder
+
+### Netlify Configuration
+
+The `netlify.toml` file includes:
+- SPA routing configuration (redirects all routes to index.html)
+- Security headers
+- Cache control for static assets
+
 ## Deploying to Vercel
 
 This repository contains a GitHub Actions workflow that builds the Flutter web app and deploys the generated static files to Vercel.
