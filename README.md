@@ -213,4 +213,3 @@ Notes / tips:
 - You must create a Vercel project (you can create an empty project) and set the `VERCEL_ORG_ID` and `VERCEL_PROJECT_ID` for that project.
 - If you prefer to deploy directly from your local machine, you can build locally (`flutter build web`) and use `vercel` CLI to deploy the `build/web` folder.
 - If you want Vercel to build on its side, note that Vercel's build environment does not include Flutter by default; using the GitHub Actions approach is recommended.
-
