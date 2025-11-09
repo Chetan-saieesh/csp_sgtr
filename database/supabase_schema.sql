@@ -1,4 +1,4 @@
--- Mid-Day Meal Management System - PostgreSQL Database Schema for Supabase
+-- SMART GROCERY TRACKING & REPORTING FOR SCHOOLS - PostgreSQL Database Schema for Supabase
 -- Run this SQL in your Supabase SQL Editor
 
 -- Enable UUID extension

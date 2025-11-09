@@ -1,4 +1,4 @@
-# Supabase Setup Guide for Mid-Day Meal App
+# Supabase Setup Guide for SMART GROCERY TRACKING & REPORTING FOR SCHOOLS
 
 ## Step 1: Create Supabase Project
 
@@ -6,7 +6,7 @@
 2. Sign up or log in
 3. Click "New Project"
 4. Fill in project details:
-   - **Name**: Mid-Day Meal App (or your preferred name)
+   - **Name**: Smart Grocery Tracking App (or your preferred name)
    - **Database Password**: Choose a strong password (save it securely)
    - **Region**: Select the closest region to your users
 5. Click "Create new project"

@@ -3,7 +3,7 @@
 ## Directory Overview
 
 ```
-mid_day_meal_app/
+smart_grocery_tracking_app/
 ├── lib/
 │   ├── config/
 │   │   └── database_config.dart          # MongoDB connection configuration

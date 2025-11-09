@@ -76,7 +76,7 @@ class _AuthorityDashboardState extends State<AuthorityDashboard> {
     if (success && mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(status == 'viewed' ? 'రిపోర్ట్ వీక్షించబడింది' : 'స్థితి నవీకరించబడింది'),
+          content: Text(status == 'viewed' ? 'Report marked as viewed' : 'Status updated'),
           backgroundColor: Colors.green,
         ),
       );
@@ -90,7 +90,7 @@ class _AuthorityDashboardState extends State<AuthorityDashboard> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('అథారిటీ డాష్బోర్డ్'),
+        title: const Text('Authority Dashboard'),
         backgroundColor: Colors.green.shade700,
         foregroundColor: Colors.white,
         actions: [
@@ -133,7 +133,7 @@ class _AuthorityDashboardState extends State<AuthorityDashboard> {
                         Padding(
                           padding: const EdgeInsets.all(16.0),
                           child: Text(
-                            'టీచర్లు',
+                            'Teachers',
                             style: Theme.of(context)
                                 .textTheme
                                 .titleLarge
@@ -142,14 +142,14 @@ class _AuthorityDashboardState extends State<AuthorityDashboard> {
                         ),
                         const Divider(),
                         ListTile(
-                          title: const Text('అన్ని టీచర్లు'),
+                          title: const Text('All Teachers'),
                           selected: _selectedTeacherId == null,
                           onTap: () => _filterReportsByTeacher(null),
                         ),
                         Expanded(
                           child: _teachers.isEmpty
                               ? const Center(
-                                  child: Text('ఎటువంటి టీచర్ లేదు'),
+                                  child: Text('No teachers found'),
                                 )
                               : ListView.builder(
                                   itemCount: _teachers.length,
@@ -168,8 +168,8 @@ class _AuthorityDashboardState extends State<AuthorityDashboard> {
                         Padding(
                           padding: const EdgeInsets.all(16.0),
                           child: Text(
-                            'మొత్తం టీచర్లు: ${_teachers.length}',
-                            style: Theme.of(context).textTheme.bodyMedium,
+                          'Total Teachers: ${_teachers.length}',
+                          style: Theme.of(context).textTheme.bodyMedium,
                           ),
                         ),
                       ],
@@ -188,7 +188,7 @@ class _AuthorityDashboardState extends State<AuthorityDashboard> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'సమర్పించిన రిపోర్ట్లు',
+                              'Submitted Reports',
                               style: Theme.of(context)
                                   .textTheme
                                   .headlineSmall
@@ -196,7 +196,7 @@ class _AuthorityDashboardState extends State<AuthorityDashboard> {
                             ),
                             Chip(
                               label: Text(
-                                'మొత్తం: ${_reports.length}',
+                                'Total: ${_reports.length}',
                                 style: const TextStyle(fontWeight: FontWeight.bold),
                               ),
                               backgroundColor: Colors.blue.shade100,
@@ -216,7 +216,7 @@ class _AuthorityDashboardState extends State<AuthorityDashboard> {
                                     ),
                                     const SizedBox(height: 16),
                                     Text(
-                                      'ఎటువంటి రిపోర్ట్ లేదు',
+                                      'No reports found',
                                       style: Theme.of(context)
                                           .textTheme
                                           .titleLarge
@@ -262,7 +262,7 @@ class _AuthorityDashboardState extends State<AuthorityDashboard> {
                                             '${DateFormat('yyyy-MM-dd').format(report.fromDate)} - ${DateFormat('yyyy-MM-dd').format(report.toDate)}',
                                           ),
                                           Text(
-                                            'సమర్పించిన తేదీ: ${DateFormat('yyyy-MM-dd HH:mm').format(report.submittedAt)}',
+                                            'Submitted At: ${DateFormat('yyyy-MM-dd HH:mm').format(report.submittedAt)}',
                                             style: TextStyle(
                                               fontSize: 12,
                                               color: Colors.grey.shade600,
@@ -289,11 +289,11 @@ class _AuthorityDashboardState extends State<AuthorityDashboard> {
                                                 CrossAxisAlignment.stretch,
                                             children: [
                                               const Text(
-                                                'గ్రోసరీ వివరాలు:',
-                                                style: TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 16,
-                                                ),
+                                              'Grocery Details:',
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 16,
+                                              ),
                                               ),
                                               const SizedBox(height: 16),
                                               Table(
@@ -310,7 +310,7 @@ class _AuthorityDashboardState extends State<AuthorityDashboard> {
                                                         padding:
                                                             EdgeInsets.all(8.0),
                                                         child: Text(
-                                                          'గ్రోసరీ పేరు',
+                                                          'Grocery Name',
                                                           style: TextStyle(
                                                             fontWeight:
                                                                 FontWeight.bold,
@@ -321,7 +321,7 @@ class _AuthorityDashboardState extends State<AuthorityDashboard> {
                                                         padding:
                                                             EdgeInsets.all(8.0),
                                                         child: Text(
-                                                          'మొత్తం పరిమాణం',
+                                                          'Total Quantity',
                                                           style: TextStyle(
                                                             fontWeight:
                                                                 FontWeight.bold,

@@ -19,14 +19,14 @@ git config --global user.email "your.email@example.com"
 After setting up Git, run:
 
 ```bash
-git commit -m "Initial commit: Mid-Day Meal Management System with Supabase"
+git commit -m "Initial commit: SMART GROCERY TRACKING & REPORTING FOR SCHOOLS with Supabase"
 ```
 
 ## Step 3: Create GitHub Repository
 
 1. Go to https://github.com and sign in
 2. Click the "+" icon → "New repository"
-3. Name it: `mid-day-meal-app` (or your preferred name)
+3. Name it: `smart-grocery-tracking-app` (or your preferred name)
 4. Choose Public or Private
 5. **DO NOT** initialize with README, .gitignore, or license
 6. Click "Create repository"
@@ -37,7 +37,7 @@ After creating the repository, run these commands (replace YOUR_USERNAME with yo
 
 ```bash
 # Add remote repository
-git remote add origin https://github.com/YOUR_USERNAME/mid-day-meal-app.git
+git remote add origin https://github.com/YOUR_USERNAME/smart-grocery-tracking-app.git
 
 # Rename branch to main
 git branch -M main
@@ -56,10 +56,10 @@ git config --global user.name "Your Name"
 git config --global user.email "your.email@example.com"
 
 # 2. Commit (already staged)
-git commit -m "Initial commit: Mid-Day Meal Management System with Supabase"
+git commit -m "Initial commit: SMART GROCERY TRACKING & REPORTING FOR SCHOOLS with Supabase"
 
 # 3. Add remote (after creating GitHub repo)
-git remote add origin https://github.com/YOUR_USERNAME/mid-day-meal-app.git
+git remote add origin https://github.com/YOUR_USERNAME/smart-grocery-tracking-app.git
 
 # 4. Rename branch
 git branch -M main

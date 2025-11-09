@@ -6,8 +6,8 @@
 2. Click the "+" icon in the top right corner
 3. Select "New repository"
 4. Fill in the repository details:
-   - **Repository name**: `mid-day-meal-app` (or your preferred name)
-   - **Description**: "Flutter web application for managing mid-day meal grocery usage updates"
+   - **Repository name**: `smart-grocery-tracking-app` (or your preferred name)
+   - **Description**: "Flutter web application for smart grocery tracking and reporting for schools"
    - **Visibility**: Choose Public or Private
    - **DO NOT** initialize with README, .gitignore, or license (we already have these)
 5. Click "Create repository"
@@ -18,7 +18,7 @@ After creating the repository, GitHub will show you commands. Use these commands
 
 ```bash
 # Add your GitHub repository as remote (replace YOUR_USERNAME with your GitHub username)
-git remote add origin https://github.com/YOUR_USERNAME/mid-day-meal-app.git
+git remote add origin https://github.com/YOUR_USERNAME/smart-grocery-tracking-app.git
 
 # Rename branch to main (if needed)
 git branch -M main
@@ -33,7 +33,7 @@ If you have SSH keys set up with GitHub:
 
 ```bash
 # Add remote using SSH
-git remote add origin git@github.com:YOUR_USERNAME/mid-day-meal-app.git
+git remote add origin git@github.com:YOUR_USERNAME/smart-grocery-tracking-app.git
 
 # Push to GitHub
 git push -u origin main

@@ -1,6 +1,6 @@
-# Mid-Day Meal Management System
+# SMART GROCERY TRACKING & REPORTING FOR SCHOOLS
 
-A Flutter web application for managing mid-day meal grocery usage updates.
+A Flutter web application for smart grocery tracking and reporting for schools.
 
 ## Features
 
@@ -193,3 +193,24 @@ This project is available under the MIT License.
 - [Supabase Documentation](https://supabase.com/docs)
 - [Supabase Flutter Documentation](https://supabase.com/docs/reference/dart/introduction)
 - [Flutter Documentation](https://flutter.dev/docs)
+
+## Deploying to Vercel
+
+This repository contains a GitHub Actions workflow that builds the Flutter web app and deploys the generated static files to Vercel.
+
+What the workflow does:
+- Installs Flutter (stable channel)
+- Runs `flutter pub get` and `flutter build web --release`
+- Deploys the `build/web` folder to Vercel using the Vercel GitHub Action
+
+Required GitHub repository secrets (set these in your repository Settings → Secrets):
+- `VERCEL_TOKEN` — your Vercel personal token (create at https://vercel.com/account/tokens)
+- `VERCEL_ORG_ID` — your Vercel organization ID (find in your Vercel project settings)
+- `VERCEL_PROJECT_ID` — your Vercel project ID (find in your Vercel project settings)
+
+Notes / tips:
+- The workflow runs on pushes to `main`.
+- You must create a Vercel project (you can create an empty project) and set the `VERCEL_ORG_ID` and `VERCEL_PROJECT_ID` for that project.
+- If you prefer to deploy directly from your local machine, you can build locally (`flutter build web`) and use `vercel` CLI to deploy the `build/web` folder.
+- If you want Vercel to build on its side, note that Vercel's build environment does not include Flutter by default; using the GitHub Actions approach is recommended.
+

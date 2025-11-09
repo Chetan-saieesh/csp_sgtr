@@ -1,11 +1,11 @@
 {
-    "name": "Mid-Day Meal Management System",
-    "short_name": "Mid-Day Meal",
+    "name": "SMART GROCERY TRACKING & REPORTING FOR SCHOOLS",
+    "short_name": "Smart Grocery",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A Flutter web application for managing mid-day meal grocery usage updates",
+    "description": "A Flutter web application for smart grocery tracking and reporting for schools",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

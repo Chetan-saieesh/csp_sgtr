@@ -89,7 +89,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       const SizedBox(height: 16),
                       Text(
-                        'మిడ్-డే-మీల్ సిస్టమ్',
+                        'SMART GROCERY TRACKING & REPORTING FOR SCHOOLS',
                         style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                               fontWeight: FontWeight.bold,
                               color: Colors.blue.shade700,
@@ -97,7 +97,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        'లాగిన్ చేయండి',
+                        'Login',
                         style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                               color: Colors.grey.shade600,
                             ),
@@ -106,7 +106,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       TextFormField(
                         controller: _usernameController,
                         decoration: InputDecoration(
-                          labelText: 'యూజర్ నేమ్',
+                          labelText: 'Username',
                           prefixIcon: const Icon(Icons.person),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
@@ -114,7 +114,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'దయచేసి యూజర్ నేమ్ నమోదు చేయండి';
+                            return 'Please enter your username';
                           }
                           return null;
                         },
@@ -124,7 +124,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         controller: _passwordController,
                         obscureText: _obscurePassword,
                         decoration: InputDecoration(
-                          labelText: 'పాస్వర్డ్',
+                          labelText: 'Password',
                           prefixIcon: const Icon(Icons.lock),
                           suffixIcon: IconButton(
                             icon: Icon(
@@ -144,7 +144,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'దయచేసి పాస్వర్డ్ నమోదు చేయండి';
+                            return 'Please enter your password';
                           }
                           return null;
                         },
@@ -171,7 +171,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                       color: Colors.white,
                                     )
                                   : const Text(
-                                      'లాగిన్ చేయండి',
+                                      'Login',
                                       style: TextStyle(
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold,

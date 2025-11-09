@@ -1,4 +1,4 @@
-# Mid-Day Meal App - Setup Guide
+# SMART GROCERY TRACKING & REPORTING FOR SCHOOLS - Setup Guide
 
 ## 1. MongoDB Atlas Setup
 
@@ -24,7 +24,7 @@
 2. Choose "Connect your application"
 3. Copy the connection string
 4. Replace `<password>` with your database user password
-5. Replace `<database>` with `middaymeal` or your preferred database name
+5. Replace `<database>` with `smartgrocery` or your preferred database name
 
 ### Step 5: Update Connection String in App
 1. Open `lib/config/database_config.dart`
@@ -32,7 +32,7 @@
 
 ```dart
 static const String connectionString =
-    'mongodb+srv://your-username:your-password@cluster.mongodb.net/middaymeal?retryWrites=true&w=majority';
+    'mongodb+srv://your-username:your-password@cluster.mongodb.net/smartgrocery?retryWrites=true&w=majority';
 ```
 
 ## 2. Create Test Users in MongoDB
@@ -40,7 +40,7 @@ static const String connectionString =
 ### Using MongoDB Compass (Recommended)
 1. Download and install [MongoDB Compass](https://www.mongodb.com/products/compass)
 2. Connect to your MongoDB Atlas cluster using the connection string
-3. Create a database named `middaymeal`
+3. Create a database named `smartgrocery`
 4. Create collections: `users`, `grocery_usage`, `reports`
 
 ### Insert Test Users

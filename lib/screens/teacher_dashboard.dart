@@ -118,7 +118,7 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
         if (success && mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
-              content: Text('గ్రోసరీ ఉపయోగం జతచేయబడింది'),
+              content: Text('Grocery usage added successfully'),
               backgroundColor: Colors.green,
             ),
           );
@@ -128,7 +128,7 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
         } else if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
-              content: Text('దోషం సంభవించింది'),
+                content: Text('An error occurred'),
               backgroundColor: Colors.red,
             ),
           );
@@ -142,7 +142,7 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
       if (_fromDate == null || _toDate == null) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('దయచేసి తేదీలను ఎంచుకోండి'),
+            content: Text('Please select dates'),
             backgroundColor: Colors.red,
           ),
         );
@@ -197,7 +197,7 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
         if (success && mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
-              content: Text('రిపోర్ట్ సమర్పించబడింది'),
+              content: Text('Report submitted successfully'),
               backgroundColor: Colors.green,
             ),
           );
@@ -207,7 +207,7 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
         } else if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
-              content: Text('దోషం సంభవించింది'),
+              content: Text('An error occurred'),
               backgroundColor: Colors.red,
             ),
           );
@@ -222,7 +222,7 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('టీచర్ డాష్బోర్డ్'),
+        title: const Text('Teacher Dashboard'),
         backgroundColor: Colors.blue.shade700,
         foregroundColor: Colors.white,
         actions: [
@@ -255,15 +255,15 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
             destinations: const [
               NavigationRailDestination(
                 icon: Icon(Icons.add_shopping_cart),
-                label: Text('గ్రోసరీ జోడించండి'),
+                label: Text('Add Grocery'),
               ),
               NavigationRailDestination(
                 icon: Icon(Icons.description),
-                label: Text('రిపోర్ట్ జనరేట్ చేయండి'),
+                label: Text('Generate Report'),
               ),
               NavigationRailDestination(
                 icon: Icon(Icons.history),
-                label: Text('రిపోర్ట్ చరిత్ర'),
+                label: Text('Report History'),
               ),
             ],
           ),
@@ -298,7 +298,7 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
-                  'గ్రోసరీ ఉపయోగం జోడించండి',
+                  'Add Grocery Usage',
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
@@ -308,7 +308,7 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
                   onTap: () => _selectDate(context),
                   child: InputDecorator(
                     decoration: InputDecoration(
-                      labelText: 'తేదీ',
+                      labelText: 'Select Date',
                       prefixIcon: const Icon(Icons.calendar_today),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
@@ -323,7 +323,7 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
                 TextFormField(
                   controller: _groceryNameController,
                   decoration: InputDecoration(
-                    labelText: 'గ్రోసరీ పేరు',
+                    labelText: 'Grocery Name',
                     prefixIcon: const Icon(Icons.shopping_bag),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
@@ -331,7 +331,7 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'దయచేసి గ్రోసరీ పేరు నమోదు చేయండి';
+                      return 'Please enter grocery name';
                     }
                     return null;
                   },
@@ -340,7 +340,7 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
                 TextFormField(
                   controller: _quantityController,
                   decoration: InputDecoration(
-                    labelText: 'పరిమాణం (kg)',
+                    labelText: 'Quantity (kg)',
                     prefixIcon: const Icon(Icons.scale),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
@@ -349,10 +349,10 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
                   keyboardType: TextInputType.number,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'దయచేసి పరిమాణం నమోదు చేయండి';
+                      return 'Please enter quantity';
                     }
                     if (double.tryParse(value) == null) {
-                      return 'దయచేసి చెల్లుబాటు అయ్యే సంఖ్యను నమోదు చేయండి';
+                      return 'Please enter a valid number';
                     }
                     return null;
                   },
@@ -369,20 +369,20 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
                     ),
                   ),
                   child: const Text(
-                    'జోడించండి',
+                    'Add',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                 ),
                 const SizedBox(height: 32),
                 Text(
-                  'ఇటీవలి ఉపయోగం',
+                  'Recent Usage',
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
                 ),
                 const SizedBox(height: 16),
                 _groceryUsageList.isEmpty
-                    ? const Text('ఇంకా ఎటువంటి ఉపయోగం లేదు')
+                    ? const Text('No usage records yet')
                     : ListView.builder(
                         shrinkWrap: true,
                         physics: const NeverScrollableScrollPhysics(),
@@ -428,7 +428,7 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
-                  'రిపోర్ట్ జనరేట్ చేయండి',
+                  'Generate Report',
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
@@ -437,16 +437,16 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
                 InkWell(
                   onTap: () => _selectFromDate(context),
                   child: InputDecorator(
-                    decoration: InputDecoration(
-                      labelText: 'నుండి తేదీ',
+                      decoration: InputDecoration(
+                      labelText: 'From Date',
                       prefixIcon: const Icon(Icons.calendar_today),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
                       ),
                     ),
-                    child: Text(
+                      child: Text(
                       _fromDate == null
-                          ? 'తేదీని ఎంచుకోండి'
+                          ? 'Select date'
                           : DateFormat('yyyy-MM-dd').format(_fromDate!),
                     ),
                   ),
@@ -456,15 +456,15 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
                   onTap: () => _selectToDate(context),
                   child: InputDecorator(
                     decoration: InputDecoration(
-                      labelText: 'వరకు తేదీ',
+                      labelText: 'To Date',
                       prefixIcon: const Icon(Icons.calendar_today),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
                       ),
                     ),
-                    child: Text(
+                      child: Text(
                       _toDate == null
-                          ? 'తేదీని ఎంచుకోండి'
+                          ? 'Select date'
                           : DateFormat('yyyy-MM-dd').format(_toDate!),
                     ),
                   ),
@@ -481,7 +481,7 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
                     ),
                   ),
                   child: const Text(
-                    'రిపోర్ట్ జనరేట్ చేసి సమర్పించండి',
+                    'Generate and Submit Report',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -500,7 +500,7 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            'రిపోర్ట్ చరిత్ర',
+            'Report History',
             style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                   fontWeight: FontWeight.bold,
                 ),
@@ -508,7 +508,7 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
           const SizedBox(height: 24),
           _reportsList.isEmpty
               ? const Center(
-                  child: Text('ఇంకా ఎటువంటి రిపోర్ట్ లేదు'),
+                  child: Text('No reports available yet'),
                 )
               : ListView.builder(
                   shrinkWrap: true,
@@ -524,7 +524,7 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
                           '${DateFormat('yyyy-MM-dd').format(report.fromDate)} - ${DateFormat('yyyy-MM-dd').format(report.toDate)}',
                         ),
                         subtitle: Text(
-                          'సమర్పించిన తేదీ: ${DateFormat('yyyy-MM-dd HH:mm').format(report.submittedAt)}',
+                          'Submitted At: ${DateFormat('yyyy-MM-dd HH:mm').format(report.submittedAt)}',
                         ),
                         children: [
                           Padding(
@@ -533,7 +533,7 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
                                 const Text(
-                                  'గ్రోసరీ వివరాలు:',
+                                  'Grocery Details:',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 16,
